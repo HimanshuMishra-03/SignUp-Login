@@ -1,24 +1,4 @@
-// // routes/auth.routes.js
 
-// import express from "express";
-// import { authenticate } from "../middleware/authenticate.js";
-// import User from "../models/Model_Name/user.models.js";
-
-// const router = express.Router();
-
-// router.get("/me", authenticate, async (req, res) => {
-//   try {
-//     const user = await User.findById(req.user.id).select("-password"); // no password exposed
-//     res.json(user);
-//   } catch (err) {
-//     res.status(500).json({ message: "Server error" });
-//   }
-// });
-
-// export default router;
-
-
-// server/routes/auth.routes.js
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -81,50 +61,5 @@ router.get("/me", Authenticate, async (req, res) => {
       res.status(500).json({ msg: "Something went wrong" });
     }
   });
-
-// Route to generate 2FA secret and QR
-
-// router.get('/2fa/setup', Authenticate, async (req, res) => {
-//   try {
-//     const email = req.user.email; // ⬅️ comes from decoded JWT in middleware
-
-//     const secret = speakeasy.generateSecret({ name: `MyApp (${email})` });
-
-//     qrcode.toDataURL(secret.otpauth_url, (err, data_url) => {
-//       if (err) {
-//         console.error("QR gen error:", err);
-//         return res.status(500).json({ msg: 'Failed to generate QR' });
-//       }
-//       console.log({ qr: data_url, secret: secret.base32 });
-
-//       res.json({
-//         qr: data_url,
-//         secret: secret.base32,
-//       });
-//     });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ msg: "Error generating 2FA setup" });
-//   }
-// });
-
-
-// router.post('/2fa/verify', (req, res) => {
-//     const { token, secret } = req.body;
-  
-//     const verified = speakeasy.totp.verify({
-//       secret,
-//       encoding: 'base32',
-//       token,
-//     });
-  
-//     if (verified) {
-//       res.json({ verified: true });
-//     } else {
-//       res.status(400).json({ verified: false, msg: "Invalid token" });
-//     }
-//   });
-  
-  
 
 export default router;

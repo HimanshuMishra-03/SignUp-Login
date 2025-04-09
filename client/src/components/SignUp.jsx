@@ -26,9 +26,6 @@ function SignUp() {
     setPassword("");
     setConPass("");
 
-    
-		// axios.post('/api/register', { username, email, password }) 👈 hook it here
-    //Backend Integration
     axios.post("http://localhost:3334/api/signup", {
       username,
       email,

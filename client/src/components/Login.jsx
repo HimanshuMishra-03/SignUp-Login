@@ -25,10 +25,7 @@ function Login() {
 			navigate('/dashboard')
 		})
 		.catch(err => console.log(err))
-		// 🔥 Hook up your axios POST request here if needed
-		// axios.post('/api/login', { email, password })
 
-		// 🧼 Reset form
 		setEmail("");
 		setPassword("");
 	};
