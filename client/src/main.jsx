@@ -6,6 +6,8 @@ import Home from './components/Home'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Dashboard from './components/Dashboard'
+import ForgotPassword from './components/ForgotPassword'
+import ResetPassword from './components/ResetPassword'
 //Use either react-router or react-router-dom
 
 const router = createBrowserRouter(
@@ -16,6 +18,8 @@ const router = createBrowserRouter(
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<SignUp />} />
       <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/forgotpass' element={<ForgotPassword />}/>
+      <Route path='/resetpassword/:token' element={<ResetPassword />} />
     </Route>
   )
 )
